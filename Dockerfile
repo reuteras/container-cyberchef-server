@@ -1,5 +1,5 @@
 # Build container
-FROM node:alpine3.10 AS build-env
+FROM node:14-alpine AS build-env
 LABEL maintainer="Coding <code@ongoing.today>"
 
 USER root
@@ -13,7 +13,7 @@ RUN apk update && \
 # Container
 # This if from https://github.com/gchq/CyberChef-server/blob/master/Dockerfile
 # The COPY statement has been changed to use build-env as source.
-FROM node:alpine3.10
+FROM node:14-alpine
 LABEL author "Wes Lambert, wlambertts@gmail.com"
 LABEL description="Dockerised version of Cyberchef server (https://github.com/gchq/CyberChef-server)"
 LABEL copyright "Crown Copyright 2020"
